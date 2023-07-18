@@ -14,7 +14,7 @@
 				<span>
 					{#if bookmark.categories.length}
 						{#each bookmark.categories as category}
-							<span><a href="/">{category.name}</a></span>
+							<span><a href="/category/{category.name}">{category.name}</a></span>
 						{/each}
 					{/if}
 				</span>

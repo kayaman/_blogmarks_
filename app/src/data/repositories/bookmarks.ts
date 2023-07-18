@@ -16,9 +16,9 @@ export const getCategories = async (): Promise<Category[]> => {
 	`)
 }
 
-export const getBookmarksByCategory = async (name: string): Promise<Bookmark[]> => {
+export const getCategoryBookmarks = async (name: string): Promise<Bookmark[]> => {
 	try {
-		const bookmarks = await sanityClient.fetch(
+		const categoryBookmarks = await sanityClient.fetch(
 			groq`
 				*[_type == "category" && name == $name]
 					{_id, name, 'bookmarks': *[_type == 'bookmark' && references(^._id)]
@@ -28,7 +28,7 @@ export const getBookmarksByCategory = async (name: string): Promise<Bookmark[]> 
 			`,
 			{ name: name },
 		)
-		return bookmarks
+		return categoryBookmarks[0]['bookmarks']
 	} catch (e) {
 		throw new Error(`Something went wrong fetching bookmarks for category "${name}"`)
 	}

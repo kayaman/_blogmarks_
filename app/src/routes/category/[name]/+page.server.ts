@@ -1,12 +1,11 @@
 import { error } from '@sveltejs/kit'
-import { getBookmarksByCategory } from '../../../data/repositories/bookmarks'
-
+import { getCategoryBookmarks } from '../../../data/repositories/bookmarks'
 export const load = async ({ params }) => {
 	try {
-		const category = await getBookmarksByCategory(params.name)
+		const bookmarks = await getCategoryBookmarks(params.name)
 
 		return {
-			category,
+			bookmarks,
 		}
 	} catch (e) {
 		throw error(404, `Category not found ${params.name}`)
