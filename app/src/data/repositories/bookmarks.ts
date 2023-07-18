@@ -12,22 +12,24 @@ export const getBookmarks = async (): Promise<Bookmark[]> => {
 
 export const getCategories = async (): Promise<Category[]> => {
 	return await sanityClient.fetch(groq`
-		*[_type == "category"] | order(name asc)
+		*[_type == "category"] {_id, name } | order(name asc)
 	`)
 }
 
 export const getBookmarksByCategory = async (name: string): Promise<Bookmark[]> => {
-	const bookmarks = await sanityClient.fetch(
-		groq`
-		
-		*[_type == "category" && name == $name]
-		  {_id, name, 'bookmarks': *[_type == 'bookmark' && references(^._id)]
-				{_id, _createdAt, location, title, 'categories': categories[]->{_id, name}}
-			}
-		| order(_createdAt desc) 
-	
-	`,
-		{ name: name },
-	)
-	return bookmarks
+	try {
+		const bookmarks = await sanityClient.fetch(
+			groq`
+				*[_type == "category" && name == $name]
+					{_id, name, 'bookmarks': *[_type == 'bookmark' && references(^._id)]
+						{_id, _createdAt, location, title, 'categories': categories[]->{_id, name}}
+					}
+				| order(_createdAt desc) 
+			`,
+			{ name: name },
+		)
+		return bookmarks
+	} catch (e) {
+		throw new Error(`Something went wrong fetching bookmarks for category "${name}"`)
+	}
 }
