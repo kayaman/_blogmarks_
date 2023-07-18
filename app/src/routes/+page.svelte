@@ -12,11 +12,11 @@
 					{bookmark.title}
 				</a>
 				<span>
-					<!-- {#if bookmark.category.length}
-            {#each bookmark.category as category}
-              <span>{category}</span>
-            {/each}
-          {/if} -->
+					{#if bookmark.categories.length}
+						{#each bookmark.categories as category}
+							<span><a href="/">{category.name}</a></span>
+						{/each}
+					{/if}
 				</span>
 			</p>
 		{/each}
