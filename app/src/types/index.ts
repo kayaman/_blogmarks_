@@ -1,2 +1,2 @@
-export * from './Bookmark';
-export * from './Category';
+export * from './Bookmark'
+export * from './Category'
