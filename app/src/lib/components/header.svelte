@@ -13,6 +13,7 @@
 		flex-direction: row;
 		justify-content: flex-start;
 		align-items: center;
+		padding-inline-end: var(--size-fluid-2);
 	}
 
 	header p {

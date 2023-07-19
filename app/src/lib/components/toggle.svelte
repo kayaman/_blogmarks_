@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Sun } from 'lucide-svelte'
+	import { Moon } from 'lucide-svelte'
 </script>
 
-<p><Sun size="28" display="inline" /></p>
+<p><Moon size="28" display="inline" /></p>
