@@ -1,0 +1,44 @@
+@import '@fontsource/poppins';
+@import '@fontsource/ibm-plex-mono';
+
+html {
+	/* font-family: 'Poppins', sans-serif; */
+	/* font-weight: 500; */
+	/* font-variation-settings: 'wdth' 75, 'wght' 500; */
+
+	html {
+		--font-sans: 'Poppins', sans-serif;
+		--font-mono: 'IBM Plex Mono', monospace;
+		--size-content-lg: 90%;
+	}
+}
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	color: var(--text-1);
+	accent-color: var(--link);
+	background-image: var(--background);
+	background-attachment: fixed;
+}
+
+a:visited {
+	color: var(--anchor-visited);
+}
+
+img {
+	border-radius: var(--radius-3);
+}
+
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	padding-inline-start: 0;
+}
