@@ -1,9 +1,10 @@
 <script lang="ts">
 	import BlogmarksLM from '$lib/components/blogmarks_light_mode.svelte'
+	import BlogmarksDM from '$lib/components/blogmarks_dark_mode.svelte'
 </script>
 
 <header>
-	<BlogmarksLM />
+	<BlogmarksDM />
 	<p>my Bookmarks</p>
 </header>
 

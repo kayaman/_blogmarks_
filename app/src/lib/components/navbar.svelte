@@ -40,9 +40,11 @@
 {#if shown}
 	<aside class="sidebar">
 		<ul>
+			<li><a href="/">Home</a></li>
 			<li><a href="/categories">Categories</a></li>
-			<li><a href="/categories">Categories</a></li>
-			<li><a href="/categories">Categories</a></li>
+			<li><a href="/references">References</a></li>
+			<li><a href="/tools">Tools</a></li>
+			<li><a href="/about">About</a></li>
 		</ul>
 	</aside>
 {/if}

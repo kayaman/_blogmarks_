@@ -9,6 +9,7 @@ html {
 	--font-sans: 'Poppins', sans-serif;
 	--font-mono: 'IBM Plex Mono', monospace;
 	--size-content-lg: 90%;
+	-webkit-font-smoothing: antialiased;
 }
 
 html,
