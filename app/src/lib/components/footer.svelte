@@ -58,5 +58,9 @@
 		.copy {
 			display: none;
 		}
+
+		.icons {
+			padding-block-start: var(--size-fluid-7);
+		}
 	}
 </style>

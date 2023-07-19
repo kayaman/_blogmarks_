@@ -6,11 +6,9 @@ html {
 	/* font-weight: 500; */
 	/* font-variation-settings: 'wdth' 75, 'wght' 500; */
 
-	html {
-		--font-sans: 'Poppins', sans-serif;
-		--font-mono: 'IBM Plex Mono', monospace;
-		--size-content-lg: 90%;
-	}
+	--font-sans: 'Poppins', sans-serif;
+	--font-mono: 'IBM Plex Mono', monospace;
+	--size-content-lg: 90%;
 }
 
 html,

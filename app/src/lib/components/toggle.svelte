@@ -2,4 +2,4 @@
 	import { Sun } from 'lucide-svelte'
 </script>
 
-<p><Sun display="inline" /></p>
+<p><Sun size="28" display="inline" /></p>
