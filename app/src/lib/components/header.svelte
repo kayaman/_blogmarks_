@@ -16,7 +16,7 @@
 	}
 
 	header p {
-		font-size: var(--size-fluid-2);
+		font-size: var(--size-2);
 		font-weight: 600;
 		letter-spacing: 0.5px;
 		white-space: pre-wrap;

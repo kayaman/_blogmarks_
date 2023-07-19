@@ -83,7 +83,7 @@
 			align-items: center;
 			justify-items: flex-end;
 			justify-content: end;
-			gap: var(--size-2);
+			gap: var(--size-fluid-2);
 		}
 
 		.toggle {
@@ -91,7 +91,7 @@
 			align-self: center;
 		}
 		form input {
-			width: var(--size-fluid-7);
+			width: var(--size-fluid-8);
 			height: var(--size-fluid-4);
 			border: 1px solid var(--border);
 			border-radius: var(--size-2);
