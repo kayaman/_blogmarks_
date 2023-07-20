@@ -2,6 +2,24 @@ import sanityClient from '$lib/sanity/client'
 import groq from 'groq'
 import type { Bookmark, Category } from '../../types'
 
+export const search = async (term: string): Promise<Bookmark[]> => {
+	try {
+		return await sanityClient.fetch(groq`
+			*[_type == 'bookmark' 
+    		&& 
+      		link match "*" + $searchParam + "*"
+    		||
+      		title match "*" + $searchParam + "*"
+    		|| 
+      		$searchParam in categories[]->name
+			]{_id, _createdAt, title, link, 'categories': categories[]->{_id, name}} 
+			|order(_createdAt desc) 
+	`)
+	} catch (e) {
+		throw new Error(`Something went wrong searching for "${term}"`)
+	}
+}
+
 export const getBookmarks = async (): Promise<Bookmark[]> => {
 	return await sanityClient.fetch(groq`
 		*[_type == "bookmark"]
